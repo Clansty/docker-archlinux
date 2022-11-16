@@ -1,0 +1,4 @@
+[options]
+Color
+VerbosePkgLists
+ParallelDownloads = 5

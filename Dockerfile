@@ -4,6 +4,7 @@ ARG PACKAGE_GROUP=base
 COPY files /files
 RUN \
 	apk add arch-install-scripts pacman-makepkg curl && \
+	cat /files/pacman-options >> /etc/pacman.conf && \
 	cat /files/repos-$TARGETARCH >> /etc/pacman.conf && \
 	mkdir -p /etc/pacman.d && \
 	cp /files/mirrorlist-$TARGETARCH /etc/pacman.d/mirrorlist && \
