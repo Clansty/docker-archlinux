@@ -23,6 +23,8 @@ RUN \
 	mkdir /rootfs && \
 	/files/pacstrap-docker /rootfs $PACKAGE_GROUP && \
 	cp /etc/pacman.d/mirrorlist /rootfs/etc/pacman.d/mirrorlist && \
+	cat /files/pacman-options > /rootfs/etc/pacman.conf && \
+	cat /files/repos-$TARGETARCH >> /rootfs/etc/pacman.conf && \
 	echo "en_US.UTF-8 UTF-8" > /rootfs/etc/locale.gen && \
 	echo "LANG=en_US.UTF-8" > /rootfs/etc/locale.conf && \
 	chroot /rootfs locale-gen && \

@@ -1,4 +1,8 @@
 [options]
+HoldPkg     = pacman glibc
+Architecture = auto
+SigLevel    = Required DatabaseOptional
+LocalFileSigLevel = Optional
 Color
 VerbosePkgLists
 ParallelDownloads = 5
